@@ -1,0 +1,56 @@
+Exercise 1: JavaScript Debugging
+
+
+Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Element</title>
+</head>
+<body>
+    <button onclick="toggleElement()">Toggle Element</button>
+    <div id="target" style="display: none;">This is the target element.</div>
+
+    <script>
+        function toggleElement() {
+            var element = document.getElementById("target");
+            element.style.display = (element.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
+ 
+
+
+The problem in the JavaScript provided is that it checks the initial display style for "none" and then switches it to "block". However, when the button is first clicked, the display property is not set to "none" because the style attribute contains an embedded style of "display: none." So the code doesn't work as it should.
+
+To solve this, you should use a different approach to toggle the element's visibility. You can use element.style.display to check the current displayed value and then set it accordingly.
+
+
+Corrected code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Element</title>
+</head>
+<body>
+    <button onclick="toggleElement()">Toggle Element</button>
+    <div id="target" style="display: none;">This is the target element.</div>
+
+    <script>
+        function toggleElement() {
+            var element = document.getElementById("target");
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

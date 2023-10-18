@@ -1,0 +1,90 @@
+
+Exercise 2: Debugging CSS Styling Issues
+
+
+This code snippet with HTML and CSS code that creates a specific layout, but contains CSS issues like misalignment, overlapping elements, or incorrect colors.
+Debug the CSS to achieve the desired layout.
+
+Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styling Debugging Exercise</title>
+<style>
+.container {
+width: 50%;
+margin: 0 auto;
+background-color: #f0f0f0;
+padding: 20px;
+}
+
+.box {
+width: 100px;
+height: 100px;
+background-color: #007bff;
+color: #ffffff;
+text-align: center;
+line-height: 100px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+</div>
+</body>
+</html>
+
+
+
+In the provided code snippet, you want to achieve a layout with three boxes inside a container. To fix the CSS issues and achieve the desired layout, you can make the following adjustments:
+
+1-To center the .container and set a background color
+2-To adjust the style of the .box elements
+
+
+
+Corrected code :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styling Debugging Exercise</title>
+<style>
+.container {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  line-height: 100px;
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div>
+</body>
+</html>
+
+With these changes, the boxes will be centered horizontally within the container, have proper spacing, and the background color applied correctly, achieving the desired layout.
+
